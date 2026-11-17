@@ -21,7 +21,7 @@ Keep the register of vendors you share personal data with, from [laravel-gdpr-ve
 - Country and Chapter V transfer mechanism. The mechanism field shows up only for vendors outside the EEA.
 - An **Issues** column: missing, expired or incomplete agreement, no transfer mechanism, review due, data return pending.
 - Actions: **Mark as reviewed**, **End relationship** and **Data deleted or returned** (Art. 28(3)(g)).
-- English (more languages coming).
+- 19 languages.
 
 ## Compatibility
 
