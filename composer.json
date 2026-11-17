@@ -2,52 +2,60 @@
     "name": "jeffersongoncalves/filament-gdpr-vendors",
     "description": "Filament plugin for laravel-gdpr-vendors: keep your GDPR vendor register in the panel, with the Art. 28(3) contract checklist, Chapter V transfers, reviews by risk tier and the issues each vendor still owes.",
     "keywords": [
+        "jeffersongoncalves",
         "laravel",
         "filament",
         "filament-plugin",
-        "filament-gdpr-vendors"
+        "gdpr",
+        "vendors",
+        "processors",
+        "dpa",
+        "privacy"
     ],
     "homepage": "https://github.com/jeffersongoncalves/filament-gdpr-vendors",
     "license": "MIT",
-    "type": "library",
     "authors": [
         {
-            "name": "Jefferson Simão Gonçalves",
+            "name": "Jefferson Gonçalves",
             "email": "gerson.simao.92@gmail.com",
             "role": "Developer"
         }
     ],
     "require": {
         "php": "^8.2",
-        "filament/filament": "^4.0",
+        "filament/filament": "^4.8",
+        "jeffersongoncalves/filament-plugin-core": "^2.0",
+        "jeffersongoncalves/laravel-gdpr-vendors": "^1.0",
         "spatie/laravel-package-tools": "^1.16"
     },
     "require-dev": {
-        "orchestra/testbench": "^9.0|^10.0",
+        "larastan/larastan": "^3.0",
+        "laravel/pint": "^1.0",
+        "orchestra/testbench": "^10.0|^11.0",
         "pestphp/pest": "^3.0|^4.0",
-        "larastan/larastan": "^2.0|^3.0",
-        "laravel/pint": "^1.0"
+        "pestphp/pest-plugin-laravel": "^3.0|^4.0"
     },
     "autoload": {
         "psr-4": {
-            "JeffersonGoncalves\\Filament\\GdprVendors\\": "src/"
+            "JeffersonGoncalves\\Filament\\GdprVendors\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "JeffersonGoncalves\\Filament\\GdprVendors\\Tests\\": "tests/"
+            "JeffersonGoncalves\\Filament\\GdprVendors\\Tests\\": "tests"
         }
     },
     "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "analyse": "vendor/bin/phpstan analyse",
         "test": "vendor/bin/pest",
-        "test-coverage": "vendor/bin/pest --coverage",
-        "format": "vendor/bin/pint",
-        "analyse": "vendor/bin/phpstan analyse"
+        "format": "vendor/bin/pint"
     },
     "config": {
         "sort-packages": true,
         "allow-plugins": {
-            "pestphp/pest-plugin": true
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
         }
     },
     "extra": {
